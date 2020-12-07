@@ -1,0 +1,9 @@
+.task-result {
+  background-color: white;
+  height: 600px;
+  overflow: auto;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+}

@@ -1,0 +1,12 @@
+<div *ngIf="taskResult" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{taskResult.candidateExercise.name}}</h1>
+    <p class="lead">
+      <strong>{{taskResult.candidateExercise.subject}}</strong>
+      <br>{{taskResult.candidateExercise.description}}
+      <br>Score: <b>{{taskResult.score}}/{{taskResult.candidateExercise.maximumScore}}</b> points. <b>{{taskResult.usedTipsNumber}}</b> hints used.
+    </p>
+    <div class="task-result col-12"><pre><code highlight [code]="taskResult.code"></code></pre></div>
+    <button (click)="location.back()" class="return_button btn btn-outline-secondary mt-4">Back to Exercises List</button>
+  </div>
+</div>

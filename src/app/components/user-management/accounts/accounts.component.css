@@ -1,0 +1,33 @@
+td {
+  vertical-align: middle;
+}
+
+#emailSearch {
+  min-width: 40%;
+  width: auto;
+  float: left;
+}
+
+#itemsAmount {
+  min-width: 20%;
+  width: auto;
+  float: right;
+}
+
+#selectRole {
+  min-width: 25%;
+  width: auto;
+  float: left;
+}
+
+#pagination {
+  padding-bottom: 5%;
+}
+
+#user-email:hover {
+  color: cornflowerblue;
+}
+
+.btn {
+  margin: 1%;
+}

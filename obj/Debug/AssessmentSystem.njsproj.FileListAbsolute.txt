@@ -1,0 +1,3 @@
+C:\Users\dmitriy\source\repos\AssessmentSystemAngular\obj\Debug\AssessmentSystem.njsprojAssemblyReference.cache
+C:\Users\dmitriy\source\repos\AssessmentSystemAngular\obj\Debug\AssessmentSystem.njsproj.CoreCompileInputs.cache
+C:\Users\dmitriy\source\repos\AssessmentSystemAngular\bin\Microsoft.NodejsTools.WebRole.dll

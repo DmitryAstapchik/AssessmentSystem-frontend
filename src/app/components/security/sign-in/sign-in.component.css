@@ -1,0 +1,7 @@
+h1, label {
+  color: white
+}
+
+.container-fluid {
+  min-height: calc(100vh - 50px);
+}

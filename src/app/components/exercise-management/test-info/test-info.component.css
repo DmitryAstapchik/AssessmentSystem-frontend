@@ -1,0 +1,19 @@
+.input-group-text {
+  width: 17em;
+}
+
+caption {
+  caption-side: top;
+}
+
+.question{
+  min-width: 500px;
+}
+
+.answer-variant{
+  min-width:300px;
+}
+
+.correct-answer {
+  width: 40px;
+}

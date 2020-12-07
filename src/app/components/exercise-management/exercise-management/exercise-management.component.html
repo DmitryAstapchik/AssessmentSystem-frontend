@@ -1,0 +1,73 @@
+<div class="container">
+  <h1 class="display-4 page-title ">Exercise management</h1>
+  <table class="table table-hover">
+    <caption class="lead">Tasks pool</caption>
+    <thead class="thead-light">
+      <tr>
+        <th>
+          <h5 class="align-middle">№</h5>
+        </th>
+        <th>
+          <h5>Task name</h5>
+        </th>
+        <th>
+          <h5>Subject</h5>
+        </th>
+        <th class="text-center">
+          <h5>Maximum score</h5>
+        </th>
+        <th>
+          <button routerLink="/exerciseManagement/createTask" class="btn btn-success float-right">Create task</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks; let i=index">
+        <td class="align-middle">{{i+1}}</td>
+        <td class="align-middle"><a routerLink="/exerciseManagement/editTask/{{task.id}}">{{task.name}}</a> </td>
+        <td class="align-middle">{{task.subject}}</td>
+        <td class="align-middle text-center">{{task.maximumScore}}</td>
+        <td style="float: right;" class="align-middle">
+          <button routerLink="/exerciseManagement/editTask/{{task.id}}" class="btn btn-info" type="button">Edit</button>
+          <button (click)="deleteTask(task.id)" class="btn btn-danger" type="button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!--<table class="table table-hover">
+    <caption class="lead">Tests pool</caption>
+    <thead class="thead-light">
+      <tr>
+        <th>
+          <h5 class="align-middle">№</h5>
+        </th>
+        <th>
+          <h5>Test name</h5>
+        </th>
+        <th>
+          <h5>Subject</h5>
+        </th>
+        <th class="text-center">
+          <h5>Maximum score</h5>
+        </th>
+        <th>
+          <button routerLink="/exerciseManagement/createTest" class="btn btn-success float-right">Create test</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let test of tests; let i=index">
+        <td class="align-middle">{{i+1}}</td>
+        <td class="align-middle"><a routerLink="/exerciseManagement/editTest/{{test.id}}">{{test.name}}</a> </td>
+        <td class="align-middle">{{test.subject}}</td>
+        <td class="align-middle text-center">{{test.maximumScore}}</td>
+        <td style="float: right;" class="align-middle">
+          <button routerLink="/exerciseManagement/editTest/{{test.id}}" class="btn btn-info" type="button">Edit</button>
+          <button (click)="deleteTest(test.id)" class="btn btn-danger" type="button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>-->
+
+</div>

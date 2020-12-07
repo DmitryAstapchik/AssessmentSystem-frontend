@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-style">
+  <div class="logo">
+    <a class="navbar-brand" routerLink="/welcome">
+      <img src="/assets/ico/assessment-system.png" height="30" width="30" />
+      <span class="mr-left">Assessment System</span>
+    </a>
+  </div>
+  <div class="collapse navbar-collapse navbar-style" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto"></ul>
+    <ul *ngIf="authService.isLoggedIn()" class="navbar-nav mr-auto">
+      <li *ngIf="authService.currentUser.roles.includes('candidate')" class="nav-item">
+        <a class="nav-link" routerLink="/exercises">Exercises</a>
+      </li>
+      <li *ngIf="authService.currentUser.roles.includes('admin')" class="nav-item">
+        <a class="nav-link" routerLink="/invites/send">Send invite</a>
+      </li>
+      <li *ngIf="authService.currentUser.roles.includes('coach')" class="nav-item">
+        <a class="nav-link" routerLink="/assemblyManagement">Assembly management</a>
+      </li>
+      <li *ngIf="authService.currentUser.roles.includes('admin')" class="nav-item">
+        <a class="nav-link" routerLink="/accounts">Accounts</a>
+      </li>
+      <li *ngIf="authService.currentUser.roles.includes('manager')" class="nav-item">
+        <a class="nav-link" routerLink="/candidatesList">Candidates list</a>
+      </li>
+      <li *ngIf="authService.currentUser.roles.includes('coach')" class="nav-item">
+        <a class="nav-link" routerLink="/exerciseManagement">Exercise management</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="authService.isLoggedIn()">
+        <a [routerLink]="['/accountInfo']" class="lavend-color">{{ authService.currentUser.userName + ' ' + authService.currentUser.userSurname }}</a>
+      </li>
+      <li *ngIf="!authService.isLoggedIn()">
+        <a [routerLink]="['/signIn']" class="lavend-color">Sign in </a>
+      </li>
+      <li *ngIf="!authService.isLoggedIn()">
+        <a [routerLink]="['/signUp']" class="lavend-color">Sign up</a>
+      </li>
+
+      <li *ngIf="authService.isLoggedIn()">
+        <a [routerLink]="['/signIn']" (click)="logOut()" class="lavend-color mr-left">Log out</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+

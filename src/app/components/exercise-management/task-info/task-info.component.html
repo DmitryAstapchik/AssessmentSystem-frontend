@@ -1,0 +1,142 @@
+<div class="container">
+  <h1 class="display-4 page-title">Task info</h1>
+  <div *ngIf="task">
+    <div class="row">
+      <div class="col-10">
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Name</span>
+          </div>
+          <input [(ngModel)]="task.name" id="name" name="name" #name="ngModel" type="text" class="form-control" aria-describedby="basic-addon1"
+                 required>
+        </div>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="name.errors.required">
+            Name is required.
+          </div>
+        </div>
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Subject</span>
+          </div>
+          <input [(ngModel)]="task.subject" id="subject" name="subject" #subject="ngModel" type="text" class="form-control" aria-describedby="basic-addon1"
+                 required>
+        </div>
+        <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="subject.errors.required">
+            Subject is required.
+          </div>
+        </div>
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Description</span>
+          </div>
+          <textarea [(ngModel)]="task.description" id="description" name="description" #description="ngModel" class="form-control"
+                    aria-label="With textarea" required></textarea>
+        </div>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="description.errors.required">
+            Description is required.
+          </div>
+        </div>
+
+        <div class="input-group mt-3 ">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              Hints
+              <br>(Each hint starts from a new line)
+            </span>
+          </div>
+          <textarea [(ngModel)]="task.tips" id="tips" name="tips" #tips="ngModel" class="form-control" aria-describedby="basic-addon1"></textarea>
+        </div>
+
+        <div class="input-group mt-3  ">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Maximum score</span>
+          </div>
+          <input type="number" [(ngModel)]="task.maximumScore" id="maximumScore" name="maximumScore" #maximumScore="ngModel" class="form-control"
+                 aria-describedby="basic-addon1" required min="0" max="10">
+        </div>
+        <div *ngIf="maximumScore.invalid && (maximumScore.dirty || maximumScore.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="maximumScore.errors.required">
+            MaximumScore is required.
+          </div>
+        </div>
+
+        <div class="form-check mt-3">
+          <input type="checkbox" id="enableTime" name="enableTime" class="form-check-input" [checked]="task.timeMinutes > 0" (change)="setTime($event)" [(ngModel)]="enableTime">
+          <label class="form-check-label" for="enableTime">
+            Set timer
+          </label>
+        </div>
+
+        <div *ngIf="task.timeMinutes > 0 ">
+          <div class="input-group mt-3 form-group ">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Time in minutes</span>
+            </div>
+            <input type="number" [(ngModel)]="task.timeMinutes" id="timeMinutes" name="timeMinutes" #timeMinutes="ngModel" class="form-control"
+                   aria-describedby="basic-addon1" required min="5">
+          </div>
+          <div *ngIf="timeMinutes.invalid && (timeMinutes.dirty || timeMinutes.touched)" class="alert alert-danger col-auto">
+            <div *ngIf="timeMinutes.errors.required">
+              Time is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Code template</span>
+          </div>
+          <textarea [(ngModel)]="task.codeTemplate" id="codeTemplate" name="codeTemplate" #codeTemplate="ngModel" class="form-control"
+                    aria-label="With textarea" required></textarea>
+        </div>
+        <div *ngIf="codeTemplate.invalid && (codeTemplate.dirty || codeTemplate.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="codeTemplate.errors.required">
+            CodeTemplate is required.
+          </div>
+        </div>
+
+        <div class="input-group mt-3 ">
+          <div class="input-group-prepend">
+            <label class="input-group-text">Test assembly</label>
+          </div>
+          <select [(ngModel)]="task.assemblyName" #assemblyName class="custom-select" (change)="onSelectAssemblyName($event)">
+            <option disabled selected hidden [value]="task.assemblyName">{{task.assemblyName}}</option>
+            <option *ngFor="let assembly of assemblies">{{assembly.assemblyName}}</option>
+          </select>
+        </div>
+
+        <div class="input-group mt-3 ">
+          <div class="input-group-prepend">
+            <label class="input-group-text">Test class</label>
+          </div>
+          <select [(ngModel)]="task.testClassName" [disabled]="isClassNameDisabled" #testClassName class="custom-select" (change)="onSelectClassName($event)">
+            <option disabled selected hidden [value]="task.testClassName">{{task.testClassName}}</option>
+            <option *ngFor="let class of currentAssembly.testClassesElements">{{class.name}}</option>
+          </select>
+        </div>
+
+        <div class="input-group mt-3 ">
+          <div class="input-group-prepend">
+            <label class="input-group-text">Test method</label>
+          </div>
+          <select [(ngModel)]="task.testMethodName" [disabled]="isMethodNameDisabled" #testMethodName class="custom-select">
+            <option disabled selected hidden [value]="task.testMethodName">{{task.testMethodName}}</option>
+            <option *ngFor="let method of currentClassElement.methodsNames">{{method}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <button *ngIf="this.currentPath=='/exerciseManagement/createTask'" id="buttonCreate" [disabled]="isButtonDisabled" (click)="addNewExercise(codeTemplate.value, assemblyName.value, testClassName.value, testMethodName.value, tips.value, id=1, name.value, subject.value, description.value, maximumScore.value)" type="button" class="btn btn-success mb-4">Create</button>
+      <button *ngIf="this.currentPath=='/exerciseManagement/editTask/'+this.id" (click)="save(tips.value)" type="button" class="btn btn-success mb-4" id="buttonSave">Save</button>
+      <button routerLink="/exerciseManagement" class="btn btn-outline-secondary mb-4">Back to Exercise Management</button>
+    </div>
+  </div>
+</div>

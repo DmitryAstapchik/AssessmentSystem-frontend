@@ -1,0 +1,13 @@
+<div class="container-fluid bg-secondary">
+  <div class="row">
+    <div *ngIf="confirmSuccess && show" class="col mt-5 ml-5">
+      <h1 class="display-4">Email has been confirmed!</h1>
+      <p class="lead">Now you can <a routerLink="/signIn" class="text-info">sign in</a> to the system.</p>
+    </div>
+    <div *ngIf="!confirmSuccess && show" class="col mt-5 ml-5">
+      <h1 class="display-4">E-mail hasn't been confirmed ):</h1>
+      <p class="lead">An error occured on the server or the link is wrong.</p>
+      <a routerLink="/welcome" class="btn btn-outline-light">Back to Main Page</a>
+    </div>
+  </div>
+</div>

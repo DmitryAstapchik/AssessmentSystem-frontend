@@ -1,0 +1,7 @@
+.container-fluid {
+  height: calc(100vh - 50px);
+}
+
+p, h1 {
+  color: white;
+}

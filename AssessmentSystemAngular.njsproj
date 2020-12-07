@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1bd13aa0-514e-48e5-9024-f37ac0bde195}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>protractor.conf.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <Name>AssessmentSystemAngular</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include=".angular-cli.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="README.md" />
+    <Compile Include="karma.conf.js" />
+    <Compile Include="protractor.conf.js" />
+    <Content Include="e2e\tsconfig.e2e.json" />
+    <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="e2e\app.po.ts" />
+    <Content Include="src\index.html" />
+    <Content Include="src\styles.css" />
+    <Content Include="src\favicon.ico" />
+    <Content Include="src\tsconfig.app.json" />
+    <Content Include="src\tsconfig.spec.json" />
+    <TypeScriptCompile Include="src\app\models\exercise-management\exercise.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\exercise-management\test-answer-variant.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\exercise-management\test.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\models\exercise-management\test-question.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
+    <TypeScriptCompile Include="src\typings.d.ts" />
+    <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\app.component.css" />
+    <TypeScriptCompile Include="src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <Content Include="src\assets\Software_Developer-512.png" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <Content Include="src\app\components\exercise-executor\candidate-result\candidate-result.component.html" />
+    <Content Include="src\app\components\exercise-executor\candidate-result\candidate-result.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\candidate-result\candidate-result.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\candidate-result\candidate-result.component.ts" />
+    <Content Include="src\app\components\exercise-executor\exercises\exercises.component.html" />
+    <Content Include="src\app\components\exercise-executor\exercises\exercises.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\exercises\exercises.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\exercises\exercises.component.ts" />
+    <Content Include="src\app\components\exercise-executor\task-result\task-result.component.html" />
+    <Content Include="src\app\components\exercise-executor\task-result\task-result.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\task-result\task-result.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\task-result\task-result.component.ts" />
+    <Content Include="src\app\components\exercise-executor\task-validation\task-validation.component.html" />
+    <Content Include="src\app\components\exercise-executor\task-validation\task-validation.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\task-validation\task-validation.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\task-validation\task-validation.component.ts" />
+    <Content Include="src\app\components\exercise-executor\timer\timer.component.html" />
+    <Content Include="src\app\components\exercise-executor\timer\timer.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\timer\timer.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-executor\timer\timer.component.ts" />
+    <Content Include="src\app\components\exercise-management\assembly-info\assembly-info.component.html" />
+    <Content Include="src\app\components\exercise-management\assembly-info\assembly-info.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-management\assembly-info\assembly-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-management\assembly-info\assembly-info.component.ts" />
+    <Content Include="src\app\components\exercise-management\assembly-management\assembly-management.component.html" />
+    <Content Include="src\app\components\exercise-management\assembly-management\assembly-management.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-management\assembly-management\assembly-management.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-management\assembly-management\assembly-management.component.ts" />
+    <Content Include="src\app\components\exercise-management\task-info\task-info.component.html" />
+    <Content Include="src\app\components\exercise-management\task-info\task-info.component.css" />
+    <TypeScriptCompile Include="src\app\components\exercise-management\task-info\task-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\exercise-management\task-info\task-info.component.ts" />
+    <Content Include="src\app\components\notifications\confirm-registration\confirm-registration.component.html" />
+    <Content Include="src\app\components\notifications\confirm-registration\confirm-registration.component.css" />
+    <TypeScriptCompile Include="src\app\components\notifications\confirm-registration\confirm-registration.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\notifications\confirm-registration\confirm-registration.component.ts" />
+    <Content Include="src\app\components\notifications\denied\denied-notification.component.html" />
+    <Content Include="src\app\components\notifications\denied\denied-notification.component.css" />
+    <TypeScriptCompile Include="src\app\components\notifications\denied\denied-notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\notifications\denied\denied-notification.component.ts" />
+    <Content Include="src\app\components\notifications\email-confirmed\confirm-email-notification.component.html" />
+    <Content Include="src\app\components\notifications\email-confirmed\confirm-email-notification.component.css" />
+    <TypeScriptCompile Include="src\app\components\notifications\email-confirmed\confirm-email-notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\notifications\email-confirmed\confirm-email-notification.component.ts" />
+    <Content Include="src\app\components\notifications\email-sent\email-sent-notification.component.html" />
+    <Content Include="src\app\components\notifications\email-sent\email-sent-notification.component.css" />
+    <TypeScriptCompile Include="src\app\components\notifications\email-sent\email-sent-notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\notifications\email-sent\email-sent-notification.component.ts" />
+    <Content Include="src\app\components\notifications\invites-notifications\invites-notification.component.html" />
+    <Content Include="src\app\components\notifications\invites-notifications\invites-notification.component.css" />
+    <TypeScriptCompile Include="src\app\components\notifications\invites-notifications\invites-notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\notifications\invites-notifications\invites-notification.component.ts" />
+    <Content Include="src\app\components\notifications\password-changed\restore-password-notification.component.html" />
+    <Content Include="src\app\components\notifications\password-changed\restore-password-notification.component.css" />
+    <TypeScriptCompile Include="src\app\components\notifications\password-changed\restore-password-notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\notifications\password-changed\restore-password-notification.component.ts" />
+    <Content Include="src\app\components\notifications\welcome-notification\welcome-notification.component.html" />
+    <Content Include="src\app\components\notifications\welcome-notification\welcome-notification.component.css" />
+    <TypeScriptCompile Include="src\app\components\notifications\welcome-notification\welcome-notification.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\notifications\welcome-notification\welcome-notification.component.ts" />
+    <Content Include="src\app\components\security\restore-password-enter-email\restore-password-enter-email.component.html" />
+    <Content Include="src\app\components\security\restore-password-enter-email\restore-password-enter-email.component.css" />
+    <TypeScriptCompile Include="src\app\components\security\restore-password-enter-email\restore-password-enter-email.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\security\restore-password-enter-email\restore-password-enter-email.component.ts" />
+    <Content Include="src\app\components\security\restore-password-recovery\password-recovery.component.html" />
+    <Content Include="src\app\components\security\restore-password-recovery\password-recovery.component.css" />
+    <TypeScriptCompile Include="src\app\components\security\restore-password-recovery\password-recovery-validator.directive.ts" />
+    <TypeScriptCompile Include="src\app\components\security\restore-password-recovery\password-recovery.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\security\restore-password-recovery\password-recovery.component.ts" />
+    <Content Include="src\app\components\security\sign-in\sign-in.component.html" />
+    <Content Include="src\app\components\security\sign-in\sign-in.component.css" />
+    <TypeScriptCompile Include="src\app\components\security\sign-in\sign-in.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\security\sign-in\sign-in.component.ts" />
+    <Content Include="src\app\components\security\sign-up\sign-up.component.html" />
+    <Content Include="src\app\components\security\sign-up\sign-up.component.css" />
+    <TypeScriptCompile Include="src\app\components\security\sign-up\sign-up-validator.directive.ts" />
+    <TypeScriptCompile Include="src\app\components\security\sign-up\sign-up.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\security\sign-up\sign-up.component.ts" />
+    <Content Include="src\app\components\user-management\account-info\account-info.component.html" />
+    <Content Include="src\app\components\user-management\account-info\account-info.component.css" />
+    <TypeScriptCompile Include="src\app\components\user-management\account-info\account-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\user-management\account-info\account-info.component.ts" />
+    <Content Include="src\app\components\user-management\accounts\accounts.component.html" />
+    <Content Include="src\app\components\user-management\accounts\accounts.component.css" />
+    <TypeScriptCompile Include="src\app\components\user-management\accounts\accounts.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\user-management\accounts\accounts.component.ts" />
+    <Content Include="src\app\components\user-management\candidates-list\candidate-list.component.html" />
+    <Content Include="src\app\components\user-management\candidates-list\candidate-list.component.css" />
+    <TypeScriptCompile Include="src\app\components\user-management\candidates-list\candidate-list.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\user-management\candidates-list\candidate-list.component.ts" />
+    <Content Include="src\app\components\user-management\invites-sending\invites-sending.component.html" />
+    <Content Include="src\app\components\user-management\invites-sending\invites-sending.component.css" />
+    <TypeScriptCompile Include="src\app\components\user-management\invites-sending\invites-sending.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\user-management\invites-sending\invites-sending.component.ts" />
+    <Content Include="src\app\components\user-management\user-info\user-info.component.html" />
+    <Content Include="src\app\components\user-management\user-info\user-info.component.css" />
+    <TypeScriptCompile Include="src\app\components\user-management\user-info\user-info.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\components\user-management\user-info\user-info.component.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\candidate-answer.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\candidate-exercise.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\candidate-tips.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\candidate.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\exercise-for-list.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\exercise-result.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\task-result.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\task-run-result.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\test-assembly-info.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-executor\tip.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-management\assembly-id.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-management\assembly.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-management\task-info.ts" />
+    <TypeScriptCompile Include="src\app\models\exercise-management\task.ts" />
+    <TypeScriptCompile Include="src\app\models\security\user-email.ts" />
+    <TypeScriptCompile Include="src\app\models\security\user-password-recovery.ts" />
+    <TypeScriptCompile Include="src\app\models\security\user.ts" />
+    <TypeScriptCompile Include="src\app\models\user-management\account.ts" />
+    <TypeScriptCompile Include="src\app\models\user-management\invite.ts" />
+    <TypeScriptCompile Include="src\app\models\user-management\profile.ts" />
+    <TypeScriptCompile Include="src\app\models\user-management\token.ts" />
+    <TypeScriptCompile Include="src\app\models\user-management\user-id.ts" />
+    <TypeScriptCompile Include="src\app\models\user-management\user-login.ts" />
+    <TypeScriptCompile Include="src\app\models\user-management\user-register.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\assembly-info.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\assembly-info.service.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\candidate-list.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\candidate-list.service.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\exercise-executor.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\exercise-executor.service.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\exercise-list.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\exercise-list.service.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\exercise-result.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-executor\exercise-result.service.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-management\exercise-management.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\exercise-management\exercise-management.service.ts" />
+    <TypeScriptCompile Include="src\app\services\security\account.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\security\account.service.ts" />
+    <TypeScriptCompile Include="src\app\services\security\auth.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\security\auth.service.ts" />
+    <TypeScriptCompile Include="src\app\services\security\storage.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\security\storage.service.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\invites-sending.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\invites-sending.service.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\invites.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\invites.service.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\pager.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\pager.service.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\profile.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\services\user-management\profile.service.ts" />
+    <Content Include="src\assets\brand\confirm-email-background.jpg" />
+    <Content Include="src\assets\brand\logo_white-blue.svg" />
+    <Content Include="src\assets\ico\assessment-system.png" />
+    <Content Include="src\assets\ico\assessment.png" />
+    <Content Include="src\assets\img\background-main.png" />
+    <Content Include="src\assets\img\background-main.jpg" />
+    <Content Include="src\assets\img\background-restore-password.jpg" />
+    <Content Include="src\assets\img\background-sign-in.jpg" />
+    <Content Include="src\assets\img\background-sign-up.jpg" />
+    <Content Include="src\assets\img\background.jpg" />
+    <Content Include="src\assets\lib\hljs\CHANGES.md" />
+    <Content Include="src\assets\lib\hljs\README.md" />
+    <Compile Include="src\assets\lib\hljs\highlight.pack.js" />
+    <Content Include="src\assets\lib\hljs\styles\vs.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="e2e" />
+    <Folder Include="node.js" />
+    <Folder Include="node.js\node.js" />
+    <Folder Include="src" />
+    <Folder Include="src\app" />
+    <Folder Include="src\app\components" />
+    <Folder Include="src\app\components\exercise-executor" />
+    <Folder Include="src\app\components\exercise-executor\candidate-result" />
+    <Folder Include="src\app\components\exercise-executor\exercises" />
+    <Folder Include="src\app\components\exercise-executor\task-result" />
+    <Folder Include="src\app\components\exercise-executor\task-validation" />
+    <Folder Include="src\app\components\exercise-executor\timer" />
+    <Folder Include="src\app\components\exercise-management" />
+    <Folder Include="src\app\components\exercise-management\assembly-info" />
+    <Folder Include="src\app\components\exercise-management\assembly-management" />
+    <Folder Include="src\app\components\exercise-management\task-info\" />
+    <Folder Include="src\app\components\notifications" />
+    <Folder Include="src\app\components\notifications\confirm-registration" />
+    <Folder Include="src\app\components\notifications\denied" />
+    <Folder Include="src\app\components\notifications\email-confirmed" />
+    <Folder Include="src\app\components\notifications\email-sent" />
+    <Folder Include="src\app\components\notifications\invites-notifications" />
+    <Folder Include="src\app\components\notifications\password-changed" />
+    <Folder Include="src\app\components\notifications\welcome-notification" />
+    <Folder Include="src\app\components\security" />
+    <Folder Include="src\app\components\security\restore-password-enter-email" />
+    <Folder Include="src\app\components\security\restore-password-recovery" />
+    <Folder Include="src\app\components\security\sign-in" />
+    <Folder Include="src\app\components\security\sign-up" />
+    <Folder Include="src\app\components\user-management" />
+    <Folder Include="src\app\components\user-management\account-info" />
+    <Folder Include="src\app\components\user-management\accounts" />
+    <Folder Include="src\app\components\user-management\candidates-list" />
+    <Folder Include="src\app\components\user-management\invites-sending" />
+    <Folder Include="src\app\components\user-management\user-info" />
+    <Folder Include="src\app\models" />
+    <Folder Include="src\app\models\exercise-executor" />
+    <Folder Include="src\app\models\exercise-management" />
+    <Folder Include="src\app\models\security" />
+    <Folder Include="src\app\models\user-management" />
+    <Folder Include="src\app\services" />
+    <Folder Include="src\app\services\exercise-executor" />
+    <Folder Include="src\app\services\exercise-management" />
+    <Folder Include="src\app\services\security" />
+    <Folder Include="src\app\services\user-management" />
+    <Folder Include="src\assets" />
+    <Folder Include="src\assets\brand" />
+    <Folder Include="src\assets\ico" />
+    <Folder Include="src\assets\img" />
+    <Folder Include="src\assets\lib" />
+    <Folder Include="src\assets\lib\hljs" />
+    <Folder Include="src\assets\lib\hljs\styles" />
+    <Folder Include="src\environments" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

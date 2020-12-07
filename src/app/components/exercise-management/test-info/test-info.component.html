@@ -1,0 +1,138 @@
+<div class="container">
+  <h1 class="display-4 page-title">Test info</h1>
+  <div *ngIf="true">
+    <div class="row">
+      <div class="col-10">
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Name</span>
+          </div>
+          <input [(ngModel)]="test.name" id="name" name="name" #name="ngModel" type="text" class="form-control" required placeholder="Test name">
+        </div>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="name.errors.required">
+            Name is required.
+          </div>
+        </div>
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Subject</span>
+          </div>
+          <input [(ngModel)]="test.subject" id="subject" name="subject" #subject="ngModel" type="text" class="form-control" aria-describedby="basic-addon1" required placeholder="Test subject">
+        </div>
+        <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="subject.errors.required">
+            Subject is required.
+          </div>
+        </div>
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Description</span>
+          </div>
+          <textarea [(ngModel)]="test.description" id="description" name="description" #description="ngModel" class="form-control"
+                    aria-label="With textarea" required placeholder="Test description"></textarea>
+        </div>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="description.errors.required">
+            Description is required.
+          </div>
+        </div>
+
+        <div class="input-group mt-3  ">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Maximum score</span>
+          </div>
+          <input type="number" [(ngModel)]="test.maximumScore" id="maximumScore" name="maximumScore" #maximumScore="ngModel" class="form-control"
+                 aria-describedby="basic-addon1" required min="0" max="10" placeholder="Test maximum score">
+        </div>
+        <div *ngIf="maximumScore.invalid && (maximumScore.dirty || maximumScore.touched)" class="alert alert-danger col-auto">
+          <div *ngIf="maximumScore.errors.required">
+            MaximumScore is required.
+          </div>
+        </div>
+
+        <div class="form-check mt-3">
+          <input type="checkbox" id="enableTime" name="enableTime" (change)="setTime($event)" [checked]="test.timeSeconds > 0" class="form-check-input">
+          <label class="form-check-label" for="enableTime">
+            Set timer
+          </label>
+        </div>
+
+        <div *ngIf="test.timeSeconds > 0" id="timeSeconds">
+          <div class="input-group mt-3 form-group ">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Time</span>
+            </div>
+            <input type="number" [(ngModel)]="test.timeSeconds" id="timeSeconds" name="timeSeconds" #timeSeconds="ngModel" class="form-control"
+                   required min="5" placeholder="Test time">
+          </div>
+          <div *ngIf="timeSeconds.invalid && (timeSeconds.dirty || timeSeconds.touched)" class="alert alert-danger col-auto">
+            <div *ngIf="timeSeconds.errors.required">
+              Time is required.
+            </div>
+          </div>
+        </div>
+
+        <hr />
+      </div>
+    </div>
+
+    <table class="table" rules="groups" id="tableQuestions">
+      <caption>Test questions</caption>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Question</th>
+          <th>Answer variants</th>
+          <th *ngIf="createNew"></th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <button class="btn btn-success mb-2" (click)="addQuestion()">Add question</button>
+            <h5>Total questions: {{test.questions.length}}</h5>
+          </td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr *ngFor="let question of test.questions; let i = index">
+          <td>{{i+1}}</td>
+          <td>
+            <input type="text" [(ngModel)]="question.text" name="text" class="form-control question" placeholder="Question text" />
+          </td>
+          <td class="answer-variant">
+            <div class="input-group" *ngFor="let variant of question.answerVariants; let j = index">
+              <div class="input-group-prepend correct-answer">
+                <div class="input-group-text">
+                  <input type="radio" name="question{{i}}" [checked]="variant.isCorrect" (change)="chooseVariant(question, variant)" /> <!--[(ngModel)]="variant.isCorrect" [value]="true"/>-->
+                </div>
+              </div>
+              <input type="text" class="form-control " [(ngModel)]="variant.text" placeholder="Answer #{{j + 1}}">
+            </div>
+          </td>
+          <td>
+            <button class="btn btn-danger " (click)="removeQuestion(question)">&#10005;</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mt-3">
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert" style="display:none" id="alertSaved">
+        Saved
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <button *ngIf="!createNew" (click)="save()" type="button" class="btn btn-success mb-4" id="saveButton">Save</button>
+      <button *ngIf="createNew" (click)="createTest(test)" type="button" class="btn btn-success mb-4" id="buttonCreate" [disabled]="name.invalid || subject.invalid || description.invalid || maximumScore.invalid">Create</button>
+      <button routerLink="/exerciseManagement" class="btn btn-outline-secondary mb-4">Back to Exercise Management</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.form-group {
+  float: left;
+  width: 350px;
+  clear: both;
+  text-align: left;
+}
+
+.custom-alert {
+  position: relative;
+  padding: .5rem 1.25rem;
+  margin-bottom: .2rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
+.page-title {
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.page-background {
+  min-height: 93vh;
+  background-color: #e9ecef;
+}
+
+.lowered {
+  margin-top: 10%;
+}

@@ -1,0 +1,56 @@
+<div class="container-fluid bg-secondary">
+
+  <form #loginForm="ngForm">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-auto lowered">
+        <h1 class="display-4 text-center">Sign in</h1>
+        <div [hidden]="!badLogIn" class="custom-alert alert-danger">
+          The e-mail or password is incorrect
+        </div>
+        <div [hidden]="emailConfirmed" class="custom-alert alert-danger">
+          The user's e-mail is not confirmed.
+        </div>
+        <div [hidden]="isActive" class="custom-alert alert-danger">
+          The user's account is not active (banned) in the system.
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-auto">
+        <div class="form-group">
+          <label>E-mail</label>
+          <input class="form-control" email type="email" id="email" name="email" [(ngModel)]="user.email" #email="ngModel" required placeholder="Enter email address" />
+          <div *ngIf="!email.value && (email.touched || loginForm.submitted)" class="custom-alert alert-danger">
+            Please, enter your E-mail!
+          </div>
+          <div *ngIf="email.invalid && email.value && (name.dirty || name.touched)" class="custom-alert alert-danger">
+            E-mail is not valid.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" #password="ngModel"
+                 required placeholder="Enter password" />
+          <div [hidden]="password.valid || (password.pristine && !loginForm.submitted)" class="custom-alert alert-danger">
+            Please, enter your password!
+          </div>
+        </div>
+
+        <div class="form-group mt-2">
+          <button type="submit" class="btn btn-info form-control" (click)="login(loginForm.valid)">Sign in</button>
+          <a class="btn btn-link text-light form-control mt-2" routerLink="/restorePassword/enterEmail">Forgot password?</a>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+
+
+
+  </form>
+
+</div>
